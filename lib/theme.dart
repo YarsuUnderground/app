@@ -16,4 +16,20 @@ class AppColors {
       50: Color(0xFFe6f2ff),
     },
   );
+
+  static const red = MaterialColor(
+    0xFFD8393F,
+    {
+      900: Color(0xFFbb292c),
+      800: Color(0xFFcb3337),
+      700: Color(0xFFd8393e),
+      600: Color(0xFFea4245),
+      500: Color(0xFFf94a46),
+      400: Color(0xFFf35b5e),
+      300: Color(0xFFe7797e),
+      200: Color(0xFFf09ea2),
+      100: Color(0xFFffd0d7),
+      50: Color(0xFFffecf0),
+    },
+  );
 }
