@@ -1,3 +1,7 @@
 class User {
-  // TODO
+  String firstName;
+  String secondName;
+  String isAdmin;
+  String email;
+  String phone;
 }

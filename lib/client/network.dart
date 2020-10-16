@@ -78,7 +78,7 @@ Future<int> getMyId(String token) async {
   return userId;
 }
 
-Future<int> getUser(int id) async {
+Future<List<User>> getUser(int id) async {
   Uri url = new Uri(
     scheme: "https",
     host: server,
@@ -89,9 +89,18 @@ Future<int> getUser(int id) async {
 
   dynamic data = json.decode(response.body);
 
-  int user = data["id"];
+  List<User> toReturn = [];
 
-  return user;
+  User user = User();
+  user.firstName = data["first_name"];
+  user.secondName = data["second_name"];
+  user.isAdmin = data["isAdmin"];
+  user.email = data["email"];
+  user.phone = data["phone"];
+
+  toReturn.add(user);
+
+  return toReturn;
 }
 
 void main() async {}
