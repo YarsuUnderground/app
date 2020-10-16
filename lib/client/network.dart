@@ -78,4 +78,20 @@ Future<int> getMyId(String token) async {
   return userId;
 }
 
+Future<int> getUser(int id) async {
+  Uri url = new Uri(
+    scheme: "https",
+    host: server,
+    path: "/getUser",
+    queryParameters: {"id": "$id"},
+  );
+  var response = await http.get(url.toString());
+
+  dynamic data = json.decode(response.body);
+
+  int user = data["id"];
+
+  return user;
+}
+
 void main() async {}
