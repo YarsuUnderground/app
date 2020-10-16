@@ -14,21 +14,21 @@
 }
 ```
 ---
-`getUserType` (`token`):
+`/getUserType` (`token`):
 ```json
 {
     "isAdmin":true
 }
 ```
 ---
-`getMyId` (`token`):
+`/getMyId` (`token`):
 
 ```json
 42
 ```
 ---
 
-`getUser` (`id`):
+`/getUser` (`id`):
 ```json
 {
     "first_name":"Text",
