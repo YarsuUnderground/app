@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'adminScreen.dart';
 
 // TODO: Login page
 
@@ -52,7 +53,14 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => MyHomePage(),
+                      ),
+                    );
+                  },
                   minWidth: 500,
                   height: 50,
                   color: Colors.blue,
