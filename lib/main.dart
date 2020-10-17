@@ -1,5 +1,6 @@
 import 'package:app/splashScreen.dart';
 import 'package:app/taskViewScreen.dart';
+import 'package:app/userScreen.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 import 'package:flutter/foundation.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: AppColors.mainBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SplashScreen(),
+      home: UserScreen(),
     );
   }
 }
