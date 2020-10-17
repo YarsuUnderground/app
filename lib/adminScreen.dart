@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
 import 'secondScreen.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class AdminHomeScreen extends StatefulWidget {
+  AdminHomeScreen({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _AdminHomeScreenState createState() => _AdminHomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _AdminHomeScreenState extends State<AdminHomeScreen> {
   bool _isSearching = false;
   TextEditingController _searchQueryController = TextEditingController();
   String searchQuery = "Search query";

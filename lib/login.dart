@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => MyHomePage(),
+                        builder: (BuildContext context) => AdminHomeScreen(),
                       ),
                     );
                   },
