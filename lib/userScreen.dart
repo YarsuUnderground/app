@@ -144,14 +144,14 @@ class _UserScreenState extends State<UserScreen> {
             children: [
               Container(
                 width: 1000,
-                height: 640,
+                height: 650,
                 child: Row(
                   children: [
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
                         width: 460,
-                        height: 600,
+                        height: 610,
                         child: ListView(
                           children: [
                             _buildCard(
@@ -239,7 +239,7 @@ class _UserScreenState extends State<UserScreen> {
                       child: _buildCard(
                         child: Text("Новости"),
                         color: Colors.blue[200],
-                        height: 600,
+                        height: 610,
                         width: 460,
                         title: "Новости",
                         onPressed: () {},
