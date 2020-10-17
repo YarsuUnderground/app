@@ -12,78 +12,6 @@ class AdminHomeScreen extends StatefulWidget {
 }
 
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
-  bool _isSearching = false;
-  TextEditingController _searchQueryController = TextEditingController();
-  String searchQuery = "Search query";
-  Widget _buildSearchField() {
-    return TextField(
-      controller: _searchQueryController,
-      autofocus: true,
-      decoration: InputDecoration(
-        hintText: "Search Data...",
-        border: InputBorder.none,
-        hintStyle: TextStyle(color: Colors.white30),
-      ),
-      style: TextStyle(color: Colors.white, fontSize: 16.0),
-      onChanged: (query) => updateSearchQuery(query),
-    );
-  }
-
-  List<Widget> _buildActions() {
-    if (_isSearching) {
-      return <Widget>[
-        IconButton(
-          icon: const Icon(Icons.clear),
-          onPressed: () {
-            if (_searchQueryController == null ||
-                _searchQueryController.text.isEmpty) {
-              Navigator.pop(context);
-              return;
-            }
-            _clearSearchQuery();
-          },
-        ),
-      ];
-    }
-
-    return <Widget>[
-      IconButton(
-        icon: const Icon(Icons.search),
-        onPressed: _startSearch,
-      ),
-    ];
-  }
-
-  void _startSearch() {
-    ModalRoute.of(context)
-        .addLocalHistoryEntry(LocalHistoryEntry(onRemove: _stopSearching));
-
-    setState(() {
-      _isSearching = true;
-    });
-  }
-
-  void updateSearchQuery(String newQuery) {
-    setState(() {
-      searchQuery = newQuery;
-    });
-  }
-
-  void _stopSearching() {
-    _clearSearchQuery();
-
-    setState(() {
-      _isSearching = false;
-    });
-  }
-
-  void _clearSearchQuery() {
-    setState(() {
-      _searchQueryController.clear();
-      updateSearchQuery("");
-    });
-  }
-
   Widget _buildCard({
     String title = "",
     Widget child,
@@ -409,34 +337,6 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: _isSearching ? _buildSearchField() : Text("Ориентир"),
-    //     actions: _buildActions(),
-    //     leading: _isSearching ? const BackButton() : null,
-    //   ),
-    //   body: LayoutBuilder(
-    //     builder: (content, constraints) {
-    //       if (constraints.maxWidth > 600) {
-    //         return _buildWide(context);
-    //       } else {
-    //         return Column(
-    //           mainAxisAlignment: MainAxisAlignment.start,
-    //           children: [
-    //             Text("Mobile", style: Theme.of(context).textTheme.headline1),
-    //           ],
-    //         );
-    //       }
-    //     },
-    //   ),
-    //   floatingActionButton: FloatingActionButton(
-    //     onPressed: () {
-    //       // TODO Dialogs
-    //     },
-    //     tooltip: 'Чаты',
-    //     child: Icon(Icons.message),
-    //   ),
-    // );
     return DefaultScaffold(child: _buildWide(context));
   }
 }

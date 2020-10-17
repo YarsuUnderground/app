@@ -167,6 +167,13 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
               leading: _isSearching ? const BackButton() : null,
             ),
             body: this.widget.child,
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                // TODO Dialogs
+              },
+              tooltip: 'Чаты',
+              child: Icon(Icons.message),
+            ),
           );
         } else {
           return Scaffold(
