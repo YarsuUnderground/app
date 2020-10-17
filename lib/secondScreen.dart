@@ -117,6 +117,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       child: Text(
                         title,
                         style: AppStyles.cardHeader,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     MaterialButton(
@@ -136,6 +137,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: width - 10,
                 height: height - 57,
                 child: child,
+                color: Color(0xFFc2deff),
                 padding: EdgeInsets.only(left: 10, right: 10),
               ),
             ],
@@ -187,7 +189,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "№1. Example",
+                title: "№2. Базы данных",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -211,7 +213,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№3. Разработка",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -230,7 +232,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№4. Тех.Поддержка",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -254,7 +256,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№5. Анализ данных",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -273,7 +275,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№6. Контроль информации",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -297,7 +299,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№7. Документация",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -316,7 +318,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 height: 315,
                 width: 305,
-                title: "Example",
+                title: "№8. Курсы повышения квалификации",
                 onPressed: () {
                   viewThrirdScreen();
                 },
