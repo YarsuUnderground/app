@@ -144,10 +144,6 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                         style: AppStyles.cardHeader,
                       ),
                     ),
-                    // MaterialButton(
-                    //   child: Text(""),
-                    //   onPressed: onPressed,
-                    // ),
                   ],
                 ),
                 padding: EdgeInsets.only(left: 7, right: 7),
@@ -218,14 +214,14 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                             itemCount: left.length,
                             itemBuilder: (BuildContext context, int index) {
                               return ListTile(
-                                leading: MaterialButton(
-                                  child: Icon(Icons.arrow_left),
+                                leading: IconButton(
+                                  icon: Icon(Icons.arrow_left),
                                   onPressed: null,
                                 ),
                                 title: Text(left[index].name),
                                 subtitle: Text(left[index].description),
-                                trailing: MaterialButton(
-                                  child: Icon(Icons.arrow_right),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.arrow_right),
                                   onPressed: () {
                                     setState(() {
                                       mid.add(left[index]);
@@ -246,8 +242,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                             itemCount: mid.length,
                             itemBuilder: (BuildContext context, int index) {
                               return ListTile(
-                                leading: MaterialButton(
-                                  child: Icon(Icons.arrow_left),
+                                leading: IconButton(
+                                  icon: Icon(Icons.arrow_left),
                                   onPressed: () {
                                     setState(() {
                                       left.add(mid[index]);
@@ -257,8 +253,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                 ),
                                 title: Text(mid[index].name),
                                 subtitle: Text(mid[index].description),
-                                trailing: MaterialButton(
-                                  child: Icon(Icons.arrow_right),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.arrow_right),
                                   onPressed: () {
                                     setState(() {
                                       right.add(mid[index]);
