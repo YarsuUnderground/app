@@ -347,11 +347,31 @@ class _MyHomePageState extends State<MyHomePage> {
                       tiles: [
                         ListTile(
                           leading: Icon(
+                            Icons.warning,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          title: Text(
+                              "ВНИМАНИЕ. Задание 'Ремонт трассы М9' было просрочено вчера "),
+                          subtitle: Text("11 Дек → 20 Дек"),
+                        ),
+                        ListTile(
+                          leading: Icon(
                             Icons.info_outline,
                             color: Colors.blue,
                             size: 36,
                           ),
-                          title: Text("Изменение срока"),
+                          title: Text("Изменение срока 'Больница №10'"),
+                          subtitle: Text("20 Дек → 22 Дек"),
+                        ),
+                        ListTile(
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          title: Text(
+                              "ВНИМАНИЕ. Близится срок сдачи задания 'Больница №10'"),
                           subtitle: Text("11 Дек → 20 Дек"),
                         ),
                         ListTile(
@@ -363,6 +383,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           title:
                               Text("Добавлен исполнитель: Долгоруков Вальтер"),
                           subtitle: Text("Задача: Ремонт больницы"),
+                        ),
+                        ListTile(
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          title: Text("Собрание команды задачи 'Приют' "),
+                          subtitle: Text("Дата: 21.11, 19:00"),
                         ),
                       ],
                     ),
