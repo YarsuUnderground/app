@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const mainBlue = MaterialColor(
@@ -32,4 +33,17 @@ class AppColors {
       50: Color(0xFFffecf0),
     },
   );
+}
+
+class AppStyles {
+  static final cardHeader = GoogleFonts.montserrat(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  ) as TextStyle;
+  // TextStyle(
+  //   fontSize: 18,
+  //   fontWeight: FontWeight.w500,
+  //   // Monserrat
+  // );
+  // 24 Header Page
 }
