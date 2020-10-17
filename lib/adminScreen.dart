@@ -88,7 +88,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
       Widget child,
       double width,
       double height,
-      Function onPressed}) {
+      Function onPressed,
+      Color color = Colors.white}) {
     return Container(
       width: width,
       height: height,
@@ -126,6 +127,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 width: width - 10,
                 height: height - 57,
                 child: child,
+                color: color,
               ),
             ],
           ),
@@ -170,6 +172,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 ),
               ),
               _buildCard(
+                color: Colors.red[200],
                 child: ListView(
                   children: [
                     ListTile(
@@ -206,6 +209,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 },
               ),
               _buildCard(
+                color: Colors.blue[200],
                 title: "Люди",
                 child: ListView(
                   children: [
@@ -247,6 +251,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildCard(
+                color: Colors.red[200],
                 child: ListView(
                   children: [
                     ListTile(
@@ -301,6 +306,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 },
               ),
               _buildCard(
+                color: Colors.blue[200],
                 child: ListView(
                   children: [
                     ListTile(
@@ -327,6 +333,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildCard(
+                color: Colors.blue[200],
                 child: ListView(
                   children: [
                     ...ListTile.divideTiles(
