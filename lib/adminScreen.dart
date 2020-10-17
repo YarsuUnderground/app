@@ -75,34 +75,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: MaterialButton(
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.add,
-                          size: 24,
-                        ),
-                        Text(
-                          "Создать задачу",
-                          style: AppStyles.cardHeader,
-                        ),
-                      ],
-                    ),
-                  ),
-                  onPressed: () {
-                    // TODO create task
-                  },
-                  color: Colors.white,
-                  height: 36,
-                  minWidth: 295,
-                ),
-              ),
               _buildCard(
-                color: Colors.red[200],
+                color: Color(0xFFFFD3D0),
                 child: ListView(
                   children: [
                     ListTile(
@@ -131,7 +105,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     )
                   ],
                 ),
-                height: 269,
+                height: 315,
                 width: 305,
                 title: "Новые задачи",
                 onPressed: () {
@@ -139,7 +113,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 },
               ),
               _buildCard(
-                color: Colors.blue[200],
+                color: Color(0xFFBBC1FF),
                 title: "Люди",
                 child: ListView(
                   children: [
@@ -181,7 +155,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildCard(
-                color: Colors.red[200],
+                color: Color(0xFFFFD3D0),
                 child: ListView(
                   children: [
                     ListTile(
@@ -192,7 +166,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       ),
                       title: Text("Ремонт трассы М9"),
                       subtitle: Text("Просрочено: вчера"),
-                      tileColor: Colors.red,
+                      tileColor: Color(0xFFFFADAD),
                     ),
                     ListTile(
                       leading: Icon(
@@ -236,7 +210,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 },
               ),
               _buildCard(
-                color: Colors.blue[200],
+                color: Color(0xFFBBC1FF),
                 child: ListView(
                   children: [
                     ListTile(
@@ -263,7 +237,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildCard(
-                color: Colors.blue[200],
+                color: Color(0xFFBBC1FF),
                 child: ListView(
                   children: [
                     ...ListTile.divideTiles(
