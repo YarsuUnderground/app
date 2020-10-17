@@ -1,3 +1,4 @@
+import 'package:app/client/task.dart';
 import 'package:app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,22 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
   bool _isSearching = false;
   TextEditingController _searchQueryController = TextEditingController();
   String searchQuery = "Search query";
+
+  List<SubTask> left = [
+    SubTask()
+      ..name = ""
+      ..description = "wadawdd",
+    SubTask()
+      ..name = "awddwawdawdawda"
+      ..description = "wadawadwadwdd",
+  ];
+  List<SubTask> mid = [
+    SubTask()
+      ..name = "awddwawda"
+      ..description = "wadawdd",
+  ];
+  List<SubTask> right = [];
+
   Widget _buildSearchField() {
     return TextField(
       controller: _searchQueryController,
@@ -107,10 +124,10 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                         style: AppStyles.cardHeader,
                       ),
                     ),
-                    MaterialButton(
-                      child: Text("Все"),
-                      onPressed: onPressed,
-                    ),
+                    // MaterialButton(
+                    //   child: Text(""),
+                    //   onPressed: onPressed,
+                    // ),
                   ],
                 ),
                 padding: EdgeInsets.only(left: 7, right: 7),
@@ -136,9 +153,141 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
   Widget _buildWide(BuildContext context) {
     return Container(
       color: Color(0xFFE5E5E5),
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
+        children: [
+          Container(
+            width: 1000,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 16),
+                    child: Text(
+                      "Задача",
+                      style: AppStyles.pageHeader,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 10,
+                        width: 500,
+                        color: Colors.red,
+                      ),
+                      Container(
+                        height: 10,
+                        width: 200,
+                        color: Colors.amber,
+                      ),
+                      Container(
+                        height: 10,
+                        width: 268,
+                        color: Colors.green,
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 16),
+                    child: Row(
+                      children: [
+                        _buildCard(
+                          child: ListView.builder(
+                            itemCount: left.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return ListTile(
+                                leading: MaterialButton(
+                                  child: Icon(Icons.arrow_left),
+                                ),
+                                title: Text(left[0].name),
+                                subtitle: Text(left[0].description),
+                                trailing: MaterialButton(
+                                  child: Icon(Icons.arrow_right),
+                                  onPressed: () {
+                                    setState(() {
+                                      mid.add(left[index]);
+                                      left.removeAt(index);
+                                    });
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                          color: Colors.red[200],
+                          height: 600,
+                          width: 322,
+                          title: "Placeholder",
+                        ),
+                        _buildCard(
+                          child: ListView.builder(
+                            itemCount: mid.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return ListTile(
+                                leading: MaterialButton(
+                                  child: Icon(Icons.arrow_left),
+                                  onPressed: () {
+                                    setState(() {
+                                      left.add(mid[index]);
+                                      mid.removeAt(index);
+                                    });
+                                  },
+                                ),
+                                title: Text(mid[0].name),
+                                subtitle: Text(mid[0].description),
+                                trailing: MaterialButton(
+                                  child: Icon(Icons.arrow_right),
+                                  onPressed: () {
+                                    setState(() {
+                                      right.add(mid[index]);
+                                      mid.removeAt(index);
+                                    });
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                          color: Colors.amber[200],
+                          height: 600,
+                          width: 322,
+                          title: "Placeholder",
+                        ),
+                        _buildCard(
+                          child: ListView.builder(
+                            itemCount: right.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return ListTile(
+                                leading: MaterialButton(
+                                  child: Icon(Icons.arrow_left),
+                                  onPressed: () {
+                                    setState(() {
+                                      mid.add(right[index]);
+                                      right.removeAt(index);
+                                    });
+                                  },
+                                ),
+                                title: Text(right[0].name),
+                                subtitle: Text(right[0].description),
+                                trailing: MaterialButton(
+                                  child: Icon(Icons.arrow_right),
+                                ),
+                              );
+                            },
+                          ),
+                          color: Colors.green[200],
+                          height: 600,
+                          width: 322,
+                          title: "Placeholder",
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
