@@ -1,3 +1,4 @@
+import 'package:app/taskViewScreen.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 import 'package:flutter/foundation.dart';
@@ -11,6 +12,15 @@ class MyHomePage2 extends StatefulWidget {
 }
 
 class _MyHomePageState2 extends State<MyHomePage2> {
+  void viewThrirdScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => TaskViewScreen(),
+      ),
+    );
+  }
+
   bool _isSearching = false;
   TextEditingController _searchQueryController = TextEditingController();
   String searchQuery = "Search query";
@@ -160,7 +170,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "№1. Обучение",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
               _buildCard(
@@ -179,7 +189,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "№1. Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
             ],
@@ -203,7 +213,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
               _buildCard(
@@ -222,7 +232,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
             ],
@@ -246,7 +256,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
               _buildCard(
@@ -265,7 +275,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
             ],
@@ -289,7 +299,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
               _buildCard(
@@ -308,7 +318,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: 305,
                 title: "Example",
                 onPressed: () {
-                  // TODO:
+                  viewThrirdScreen();
                 },
               ),
             ],
