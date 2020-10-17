@@ -106,6 +106,7 @@ class _UserScreenState extends State<UserScreen> {
                       child: Text(
                         title,
                         style: AppStyles.cardHeader,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     MaterialButton(
@@ -157,7 +158,8 @@ class _UserScreenState extends State<UserScreen> {
                             _buildCard(
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text("Test"),
+                                child: Text(
+                                    "Обучение для работы с новыми программными средствами и комплексами"),
                               ),
                               color: Colors.white,
                               width: 460,
@@ -171,12 +173,13 @@ class _UserScreenState extends State<UserScreen> {
                                   ),
                                 );
                               },
-                              title: "Название 1",
+                              title: "№1. Обучение",
                             ),
                             _buildCard(
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text("Test"),
+                                child: Text(
+                                    "Администрирование и обеспечение функционирования баз данных"),
                               ),
                               color: Colors.white,
                               width: 460,
@@ -190,12 +193,13 @@ class _UserScreenState extends State<UserScreen> {
                                   ),
                                 );
                               },
-                              title: "Название 2",
+                              title: "№2. Базы данных",
                             ),
                             _buildCard(
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text("Test"),
+                                child: Text(
+                                    "Разработка технической и сопроводительной документации к разрабатываемому программному обеспечению"),
                               ),
                               color: Colors.white,
                               width: 460,
@@ -209,12 +213,13 @@ class _UserScreenState extends State<UserScreen> {
                                   ),
                                 );
                               },
-                              title: "Название 3",
+                              title: "№3. Разработка",
                             ),
                             _buildCard(
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text("Test"),
+                                child: Text(
+                                    "Техническая поддержка и функциональное сопровождение введенных в эксплуатацию программных комплексов"),
                               ),
                               color: Colors.white,
                               width: 460,
@@ -228,7 +233,86 @@ class _UserScreenState extends State<UserScreen> {
                                   ),
                                 );
                               },
-                              title: "Название 3",
+                              title: "№4. Тех.Поддержка",
+                            ),
+                            _buildCard(
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text("Анализ входящих данных"),
+                              ),
+                              color: Colors.white,
+                              width: 460,
+                              height: 200,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        TaskViewScreen(),
+                                  ),
+                                );
+                              },
+                              title: "№5. Анализ данных",
+                            ),
+                            _buildCard(
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    "Отслеживание достоверности поступающей информации"),
+                              ),
+                              color: Colors.white,
+                              width: 460,
+                              height: 200,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        TaskViewScreen(),
+                                  ),
+                                );
+                              },
+                              title: "№6. Контроль информации",
+                            ),
+                            _buildCard(
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    "Изучение дополнительной документации и соглашений о конфиденциальности данных"),
+                              ),
+                              color: Colors.white,
+                              width: 460,
+                              height: 200,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        TaskViewScreen(),
+                                  ),
+                                );
+                              },
+                              title: "№7. Документация",
+                            ),
+                            _buildCard(
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    "Прохождение курсов повышения квалификации"),
+                              ),
+                              color: Colors.white,
+                              width: 460,
+                              height: 200,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        TaskViewScreen(),
+                                  ),
+                                );
+                              },
+                              title: "№8. Курсы повышения квалификации",
                             ),
                           ],
                         ),
