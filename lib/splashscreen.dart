@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:app/adminScreen.dart';
 import 'package:app/login.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,43 +16,53 @@ class _SplashScreenState extends State<SplashScreen> {
   );
 
   void onLoaded() async {
-    sleep(const Duration(seconds: 1));
-    setState(() {
-      loader = Column(
-        children: [
-          MaterialButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => LoginPage(),
-                ),
-              );
-            },
-            child: Text("Вход"),
-            minWidth: 500,
-            height: 50,
-            color: Colors.white,
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 16),
-            child: MaterialButton(
-              onPressed: () {},
-              child: Text("Регистрация"),
+    final prefs = await SharedPreferences.getInstance();
+    String token = prefs.getString("token");
+    if (token == null) {
+      setState(() {
+        loader = Column(
+          children: [
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => LoginPage(),
+                  ),
+                );
+              },
+              child: Text("Вход"),
               minWidth: 500,
               height: 50,
               color: Colors.white,
             ),
-          )
-        ],
-      );
-    });
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+              child: MaterialButton(
+                onPressed: () {},
+                child: Text("Регистрация"),
+                minWidth: 500,
+                height: 50,
+                color: Colors.white,
+              ),
+            )
+          ],
+        );
+      });
+    } else {
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => AdminHomeScreen(),
+          ),
+          (Route) => true);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     onLoaded();
-    // TODO real
+
     return Scaffold(
       body: Container(
         color: Colors.blue,

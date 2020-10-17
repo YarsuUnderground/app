@@ -8,6 +8,7 @@ import 'task.dart';
 class NetworkClient {
   static const server = "dcrvosys.herokuapp.com";
   var client = http.Client();
+  String token;
   Future<String> login(String login, String password) async {
     Uri url = new Uri(
       scheme: "https",

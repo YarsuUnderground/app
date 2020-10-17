@@ -1,4 +1,4 @@
-import 'package:app/splashscreen.dart';
+import 'package:app/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 import 'package:flutter/foundation.dart';
