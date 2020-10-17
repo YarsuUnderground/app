@@ -41,7 +41,10 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       ),
                     ),
                     MaterialButton(
-                      child: Text("Все"),
+                      child: Text(
+                        "ОТКРЫТЬ",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       onPressed: onPressed,
                     ),
                   ],
