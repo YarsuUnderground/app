@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
+import 'package:flutter/foundation.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Ориентир',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: AppColors.mainBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Ориентир'),
     );
   }
 }
@@ -28,33 +29,387 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool _isSearching = false;
+  TextEditingController _searchQueryController = TextEditingController();
+  String searchQuery = "Search query";
+  Widget _buildSearchField() {
+    return TextField(
+      controller: _searchQueryController,
+      autofocus: true,
+      decoration: InputDecoration(
+        hintText: "Search Data...",
+        border: InputBorder.none,
+        hintStyle: TextStyle(color: Colors.white30),
+      ),
+      style: TextStyle(color: Colors.white, fontSize: 16.0),
+      onChanged: (query) => updateSearchQuery(query),
+    );
+  }
 
-  void _incrementCounter() {
+  List<Widget> _buildActions() {
+    if (_isSearching) {
+      return <Widget>[
+        IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () {
+            if (_searchQueryController == null ||
+                _searchQueryController.text.isEmpty) {
+              Navigator.pop(context);
+              return;
+            }
+            _clearSearchQuery();
+          },
+        ),
+      ];
+    }
+
+    return <Widget>[
+      IconButton(
+        icon: const Icon(Icons.search),
+        onPressed: _startSearch,
+      ),
+    ];
+  }
+
+  void _startSearch() {
+    ModalRoute.of(context)
+        .addLocalHistoryEntry(LocalHistoryEntry(onRemove: _stopSearching));
+
     setState(() {
-      _counter++;
+      _isSearching = true;
     });
+  }
+
+  void updateSearchQuery(String newQuery) {
+    setState(() {
+      searchQuery = newQuery;
+    });
+  }
+
+  void _stopSearching() {
+    _clearSearchQuery();
+
+    setState(() {
+      _isSearching = false;
+    });
+  }
+
+  void _clearSearchQuery() {
+    setState(() {
+      _searchQueryController.clear();
+      updateSearchQuery("");
+    });
+  }
+
+  Widget _buildCard(
+      {String title,
+      Widget child,
+      double width,
+      double height,
+      Function onPressed}) {
+    return Container(
+      width: width,
+      height: height,
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Card(
+          margin: EdgeInsets.zero,
+          child: Column(
+            children: [
+              Container(
+                width: width - 10,
+                height: 36,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: AppStyles.cardHeader,
+                      ),
+                    ),
+                    MaterialButton(
+                      child: Text("Все"),
+                      onPressed: onPressed,
+                    ),
+                  ],
+                ),
+                padding: EdgeInsets.only(left: 7, right: 7),
+              ),
+              Container(
+                width: width - 10,
+                height: 1,
+                color: Colors.grey,
+              ),
+              Container(
+                width: width - 10,
+                height: height - 57,
+                child: child,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildWide(BuildContext context) {
+    return Container(
+      color: Color(0xFFE5E5E5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: MaterialButton(
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.add,
+                          size: 24,
+                        ),
+                        Text(
+                          "Создать задачу",
+                          style: AppStyles.cardHeader,
+                        ),
+                      ],
+                    ),
+                  ),
+                  onPressed: () {
+                    // TODO create task
+                  },
+                  color: Colors.white,
+                  height: 36,
+                  minWidth: 295,
+                ),
+              ),
+              _buildCard(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: Icon(
+                        Icons.email_outlined,
+                        size: 36,
+                      ),
+                      title: Text("Жилье для малоимущих"),
+                      subtitle: Text("test@gov.ru"),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.email_outlined,
+                        size: 36,
+                      ),
+                      title: Text("Олимпийские объекты"),
+                      subtitle: Text("test@gov.ru"),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.warning_amber_outlined,
+                        size: 36,
+                      ),
+                      title: Text("Ввод карантинных мер"),
+                      subtitle: Text("Другой орган"),
+                    )
+                  ],
+                ),
+                height: 269,
+                width: 305,
+                title: "Новые задачи",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+              _buildCard(
+                title: "Люди",
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(24.0),
+                        child: Image.asset("images/face1.jfif"),
+                      ),
+                      title: Text("Щавельский Тибор"),
+                      subtitle: Text("Отдел 1"),
+                    ),
+                    ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(24.0),
+                        child: Image.asset("images/face2.jfif"),
+                      ),
+                      title: Text("Долгоруков Вальтер"),
+                      subtitle: Text("Отдел 1"),
+                    ),
+                    ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(24.0),
+                        child: Image.asset("images/face3.jfif"),
+                      ),
+                      title: Text("Вахрушев Глеб"),
+                      subtitle: Text("Отдел 2"),
+                    ),
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildCard(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: Icon(
+                        Icons.warning,
+                        color: Colors.white,
+                        size: 36,
+                      ),
+                      title: Text("Ремонт трассы М9"),
+                      subtitle: Text("Просрочено: вчера"),
+                      tileColor: Colors.red,
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.warning_rounded,
+                        color: Colors.amber,
+                        size: 36,
+                      ),
+                      title: Text("Больница №10"),
+                      subtitle: Text("Срок: 20 Окт."),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.blue,
+                        size: 36,
+                      ),
+                      title: Text("Закупка трамваем"),
+                      subtitle: Text("Срок: 2 Дек."),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.done,
+                        color: Colors.green,
+                        size: 36,
+                      ),
+                      title: Text("Приют"),
+                      subtitle: Text("Выполнено"),
+                    ),
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "Задачи",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+              _buildCard(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      title: Text("Отдел 1"),
+                    ),
+                    ListTile(
+                      title: Text("Отдел 2"),
+                    ),
+                    ListTile(
+                      title: Text("Отдел 3"),
+                    ),
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "Отделы",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildCard(
+                child: ListView(
+                  children: [
+                    ...ListTile.divideTiles(
+                      context: context,
+                      tiles: [
+                        ListTile(
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          title: Text("Изменение срока"),
+                          subtitle: Text("11 Дек → 20 Дек"),
+                        ),
+                        ListTile(
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          title:
+                              Text("Добавлен исполнитель: Долгоруков Вальтер"),
+                          subtitle: Text("Задача: Ремонт больницы"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                height: 630,
+                width: 610,
+                title: "Новости",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: _isSearching ? _buildSearchField() : Text("Ориентир"),
+        actions: _buildActions(),
+        leading: _isSearching ? const BackButton() : null,
       ),
       body: LayoutBuilder(
         builder: (content, constraints) {
           if (constraints.maxWidth > 600) {
-            return Column();
+            return _buildWide(context);
           } else {
-            return Column();
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text("Mobile", style: Theme.of(context).textTheme.headline1),
+              ],
+            );
           }
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        onPressed: () {
+          // TODO Dialogs
+        },
+        tooltip: 'Чаты',
+        child: Icon(Icons.message),
       ),
     );
   }
