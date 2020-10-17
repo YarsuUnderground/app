@@ -202,8 +202,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                   child: Icon(Icons.arrow_left),
                                   onPressed: null,
                                 ),
-                                title: Text(left[0].name),
-                                subtitle: Text(left[0].description),
+                                title: Text(left[index].name),
+                                subtitle: Text(left[index].description),
                                 trailing: MaterialButton(
                                   child: Icon(Icons.arrow_right),
                                   onPressed: () {
@@ -235,8 +235,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                     });
                                   },
                                 ),
-                                title: Text(mid[0].name),
-                                subtitle: Text(mid[0].description),
+                                title: Text(mid[index].name),
+                                subtitle: Text(mid[index].description),
                                 trailing: MaterialButton(
                                   child: Icon(Icons.arrow_right),
                                   onPressed: () {
@@ -268,8 +268,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                     });
                                   },
                                 ),
-                                title: Text(right[0].name),
-                                subtitle: Text(right[0].description),
+                                title: Text(right[index].name),
+                                subtitle: Text(right[index].description),
                                 trailing: MaterialButton(
                                   child: Icon(Icons.arrow_right),
                                   onPressed: null,
