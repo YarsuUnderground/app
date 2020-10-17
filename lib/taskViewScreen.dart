@@ -200,6 +200,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                               return ListTile(
                                 leading: MaterialButton(
                                   child: Icon(Icons.arrow_left),
+                                  onPressed: null,
                                 ),
                                 title: Text(left[0].name),
                                 subtitle: Text(left[0].description),
@@ -216,7 +217,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                             },
                           ),
                           color: Colors.red[200],
-                          height: 600,
+                          height: 500,
                           width: 322,
                           title: "Placeholder",
                         ),
@@ -249,7 +250,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                             },
                           ),
                           color: Colors.amber[200],
-                          height: 600,
+                          height: 500,
                           width: 322,
                           title: "Placeholder",
                         ),
@@ -271,12 +272,13 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                 subtitle: Text(right[0].description),
                                 trailing: MaterialButton(
                                   child: Icon(Icons.arrow_right),
+                                  onPressed: null,
                                 ),
                               );
                             },
                           ),
                           color: Colors.green[200],
-                          height: 600,
+                          height: 500,
                           width: 322,
                           title: "Placeholder",
                         ),
