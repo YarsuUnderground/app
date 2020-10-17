@@ -233,6 +233,37 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               ),
             ],
           ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildCard(
+                child: ListView(
+                  children: [
+                    // TODO
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "Example",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+              _buildCard(
+                child: ListView(
+                  children: [
+                    // TODO
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "Example",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+            ],
+          ),
         ],
       ),
     );
