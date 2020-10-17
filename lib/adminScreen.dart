@@ -1,10 +1,11 @@
+import 'package:app/defaultScaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
 import 'secondScreen.dart';
 
 class AdminHomeScreen extends StatefulWidget {
-  AdminHomeScreen({Key key, this.title}) : super(key: key);
-  final String title;
+  AdminHomeScreen({Key key, this.id}) : super(key: key);
+  final int id;
 
   @override
   _AdminHomeScreenState createState() => _AdminHomeScreenState();
@@ -83,13 +84,14 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     });
   }
 
-  Widget _buildCard(
-      {String title,
-      Widget child,
-      double width,
-      double height,
-      Function onPressed,
-      Color color = Colors.white}) {
+  Widget _buildCard({
+    String title = "",
+    Widget child,
+    double width = 50,
+    double height = 50,
+    Function onPressed,
+    Color color = Colors.white,
+  }) {
     return Container(
       width: width,
       height: height,
@@ -407,33 +409,34 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: _isSearching ? _buildSearchField() : Text("Ориентир"),
-        actions: _buildActions(),
-        leading: _isSearching ? const BackButton() : null,
-      ),
-      body: LayoutBuilder(
-        builder: (content, constraints) {
-          if (constraints.maxWidth > 600) {
-            return _buildWide(context);
-          } else {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text("Mobile", style: Theme.of(context).textTheme.headline1),
-              ],
-            );
-          }
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // TODO Dialogs
-        },
-        tooltip: 'Чаты',
-        child: Icon(Icons.message),
-      ),
-    );
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: _isSearching ? _buildSearchField() : Text("Ориентир"),
+    //     actions: _buildActions(),
+    //     leading: _isSearching ? const BackButton() : null,
+    //   ),
+    //   body: LayoutBuilder(
+    //     builder: (content, constraints) {
+    //       if (constraints.maxWidth > 600) {
+    //         return _buildWide(context);
+    //       } else {
+    //         return Column(
+    //           mainAxisAlignment: MainAxisAlignment.start,
+    //           children: [
+    //             Text("Mobile", style: Theme.of(context).textTheme.headline1),
+    //           ],
+    //         );
+    //       }
+    //     },
+    //   ),
+    //   floatingActionButton: FloatingActionButton(
+    //     onPressed: () {
+    //       // TODO Dialogs
+    //     },
+    //     tooltip: 'Чаты',
+    //     child: Icon(Icons.message),
+    //   ),
+    // );
+    return DefaultScaffold(child: _buildWide(context));
   }
 }
