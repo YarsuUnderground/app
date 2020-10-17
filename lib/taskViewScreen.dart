@@ -9,10 +9,6 @@ class TaskViewScreen extends StatefulWidget {
 }
 
 class _TaskViewScreenState extends State<TaskViewScreen> {
-  bool _isSearching = false;
-  TextEditingController _searchQueryController = TextEditingController();
-  String searchQuery = "Search query";
-
   List<SubTask> left = [
     SubTask()
       ..name = "№1. Обучение"
@@ -47,6 +43,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
       ..description = "Прохождение курсов повышения квалификации",
   ];
   List<SubTask> right = [];
+  int sum() => this.left.length + this.mid.length + this.right.length;
+  static const int _w = 968;
 
   Widget _buildCard({
     String title,
@@ -122,17 +120,17 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                     children: [
                       Container(
                         height: 10,
-                        width: 500,
+                        width: (left.length / sum()) * _w,
                         color: Colors.red,
                       ),
                       Container(
                         height: 10,
-                        width: 200,
+                        width: (mid.length / sum()) * _w,
                         color: Colors.amber,
                       ),
                       Container(
                         height: 10,
-                        width: 268,
+                        width: (right.length / sum()) * _w,
                         color: Colors.green,
                       ),
                     ],
@@ -207,8 +205,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                             itemCount: right.length,
                             itemBuilder: (BuildContext context, int index) {
                               return ListTile(
-                                leading: MaterialButton(
-                                  child: Icon(Icons.arrow_left),
+                                leading: IconButton(
+                                  icon: Icon(Icons.arrow_left),
                                   onPressed: () {
                                     setState(() {
                                       mid.add(right[index]);
@@ -218,8 +216,8 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                                 ),
                                 title: Text(right[index].name),
                                 subtitle: Text(right[index].description),
-                                trailing: MaterialButton(
-                                  child: Icon(Icons.arrow_right),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.arrow_left),
                                   onPressed: null,
                                 ),
                               );
