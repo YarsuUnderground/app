@@ -274,7 +274,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                         color: Colors.blue,
                         size: 36,
                       ),
-                      title: Text("Закупка трамваем"),
+                      title: Text("Закука птрамваем"),
                       subtitle: Text("Срок: 2 Дек."),
                     ),
                     ListTile(

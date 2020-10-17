@@ -103,8 +103,41 @@ class NetworkClient {
     return user;
   }
 
-  Future<Task> getTasks(int id) async {
-    return null;
+  Future<List<Task>> getTasks(int id) async {
+    return <Task>[
+      Task()
+        ..creatorId = 1
+        ..deadline = DateTime.now().subtract(const Duration(days: 1))
+        ..name = "Ремонт трассы М9"
+        ..description = "Ремонт с XXX по YYY километр"
+        ..tags = ["Tag1", "Tag2"]
+        ..performers = [2, 3]
+        ..subtasks = [1, 2],
+      Task()
+        ..creatorId = 1
+        ..deadline = DateTime.utc(2020, 10, 20)
+        ..name = "Больница №10"
+        ..description = "Капитальный ремонт"
+        ..tags = ["Tag2", "Tag3"]
+        ..performers = [5, 3]
+        ..subtasks = [1, 2],
+      Task()
+        ..creatorId = 1
+        ..deadline = DateTime.utc(2020, 12, 2)
+        ..name = "Закупка трамваев"
+        ..description = "Электротранс"
+        ..tags = ["Tag3", "Tag1"]
+        ..performers = [2, 4]
+        ..subtasks = [1, 2],
+      Task()
+        ..creatorId = 1
+        ..deadline = DateTime.now().subtract(const Duration(days: 1))
+        ..name = "Приют"
+        ..description = "Ура"
+        ..tags = ["Tag1"]
+        ..performers = [4, 3]
+        ..subtasks = [1, 2]
+    ];
   }
 }
 
