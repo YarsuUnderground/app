@@ -106,3 +106,5 @@ class NetworkClient {
     return null;
   }
 }
+
+final NetworkClient client = new NetworkClient();
