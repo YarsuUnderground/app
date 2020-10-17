@@ -14,16 +14,19 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
 
   List<SubTask> left = [
     SubTask()
-      ..name = ""
-      ..description = "wadawdd",
+      ..name = "№1. Обучение"
+      ..description =
+          "Обучение для работы с новыми программными средствами и комплексами",
     SubTask()
-      ..name = "awddwawdawdawda"
-      ..description = "wadawadwadwdd",
+      ..name = "№2. Базы данных"
+      ..description =
+          "Администрирование и обеспечение функционирования баз данных",
   ];
   List<SubTask> mid = [
     SubTask()
-      ..name = "awddwawda"
-      ..description = "wadawdd",
+      ..name = "№3. Разработка"
+      ..description =
+          "Разработка технической и сопроводительной документации к разрабатываемому программному обеспечению",
   ];
   List<SubTask> right = [];
 
