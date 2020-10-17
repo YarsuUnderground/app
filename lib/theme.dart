@@ -40,10 +40,9 @@ class AppStyles {
     fontSize: 18,
     fontWeight: FontWeight.w500,
   ) as TextStyle;
-  // TextStyle(
-  //   fontSize: 18,
-  //   fontWeight: FontWeight.w500,
-  //   // Monserrat
-  // );
-  // 24 Header Page
+
+  static final pageHeader = GoogleFonts.montserrat(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  ) as TextStyle;
 }
