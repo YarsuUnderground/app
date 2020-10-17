@@ -101,8 +101,8 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
   }
 
   List<Widget> _buildActions() {
-    if (_isSearching) {
-      return <Widget>[
+    return <Widget>[
+      if (_isSearching)
         IconButton(
           icon: const Icon(Icons.clear),
           onPressed: () {
@@ -114,13 +114,11 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
             _clearSearchQuery();
           },
         ),
-      ];
-    }
-
-    return <Widget>[
       IconButton(
-        icon: const Icon(Icons.search),
-        onPressed: _startSearch,
+        icon: const Icon(Icons.exit_to_app),
+        onPressed: () {
+          Navigator.popUntil(context, (route) => route.isFirst);
+        },
       ),
     ];
   }
@@ -159,7 +157,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (content, constraints) {
-        if (constraints.maxWidth > 1300 && constraints.maxHeight > 700) {
+        if (constraints.maxWidth > 1000 && constraints.maxHeight > 600) {
           return Scaffold(
             appBar: AppBar(
               title: _isSearching ? _buildSearchField() : _buildTop(),
