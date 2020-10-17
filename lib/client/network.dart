@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'user.dart';
 
-const server = "";
+const server = "dcrvosys.herokuapp.com";
 var client = http.Client();
 
 Future<String> login(String login, String password) async {
