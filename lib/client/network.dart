@@ -9,6 +9,7 @@ class NetworkClient {
   static const server = "dcrvosys.herokuapp.com";
   var client = http.Client();
   String token;
+  // OK
   Future<String> login(String login, String password) async {
     Uri url = new Uri(
       scheme: "https",
@@ -25,13 +26,9 @@ class NetworkClient {
     return token;
   }
 
-  Future<String> register(
-    String email,
-    String password,
-    String phone,
-    String first_name,
-    String second_name,
-  ) async {
+  // OK
+  Future<String> register(String email, String password, String phone,
+      String first_name, String second_name) async {
     Uri url = new Uri(
       scheme: "https",
       host: server,
@@ -50,43 +47,46 @@ class NetworkClient {
     return token;
   }
 
+  // OK
   Future<bool> getUserType(String token) async {
     Uri url = new Uri(
       scheme: "https",
       host: server,
-      path: "/getUserType",
+      path: "/user/user_type/",
       queryParameters: {"token": "$token"},
     );
     var response = await http.get(url.toString());
 
     dynamic data = json.decode(response.body);
 
-    bool isAdmin = data["token"];
+    bool isAdmin = data["isAdmin"];
 
     return isAdmin;
   }
 
+  // OK
   Future<int> getMyId(String token) async {
     Uri url = new Uri(
       scheme: "https",
       host: server,
-      path: "/getMyId",
+      path: "/user/user_id/",
       queryParameters: {"token": "$token"},
     );
     var response = await http.get(url.toString());
 
     dynamic data = json.decode(response.body);
 
-    int userId = data["token"];
+    int userId = data["id"];
 
     return userId;
   }
 
+  // OK
   Future<User> getUser(int id) async {
     Uri url = new Uri(
       scheme: "https",
       host: server,
-      path: "/getUser",
+      path: "/user/user_data/",
       queryParameters: {"id": "$id"},
     );
     var response = await http.get(url.toString());
@@ -104,40 +104,40 @@ class NetworkClient {
   }
 
   Future<List<Task>> getTasks(int id) async {
-    return <Task>[
-      Task()
-        ..creatorId = 1
-        ..deadline = DateTime.now().subtract(const Duration(days: 1))
-        ..name = "Ремонт трассы М9"
-        ..description = "Ремонт с XXX по YYY километр"
-        ..tags = ["Tag1", "Tag2"]
-        ..performers = [2, 3]
-        ..subtasks = [1, 2],
-      Task()
-        ..creatorId = 1
-        ..deadline = DateTime.utc(2020, 10, 20)
-        ..name = "Больница №10"
-        ..description = "Капитальный ремонт"
-        ..tags = ["Tag2", "Tag3"]
-        ..performers = [5, 3]
-        ..subtasks = [1, 2],
-      Task()
-        ..creatorId = 1
-        ..deadline = DateTime.utc(2020, 12, 2)
-        ..name = "Закупка трамваев"
-        ..description = "Электротранс"
-        ..tags = ["Tag3", "Tag1"]
-        ..performers = [2, 4]
-        ..subtasks = [1, 2],
-      Task()
-        ..creatorId = 1
-        ..deadline = DateTime.now().subtract(const Duration(days: 1))
-        ..name = "Приют"
-        ..description = "Ура"
-        ..tags = ["Tag1"]
-        ..performers = [4, 3]
-        ..subtasks = [1, 2]
-    ];
+    Uri url = new Uri(
+      scheme: "https",
+      host: server,
+      path: "/user/user_tasks/",
+      queryParameters: {"id": "$id"},
+    );
+    var response = await http.get(url.toString());
+
+    dynamic data = json.decode(response.body);
+
+    print(response.body);
+
+    return null;
+  }
+
+  Future<void> createTask(Task task) async {
+    Uri url = new Uri(
+      scheme: "https",
+      host: server,
+      path: "/user/user_data/",
+    );
+    var response = await http.post(
+      url.toString(),
+      headers: {"Content-Type": "application/json"},
+      body: json.encode({
+        "creatorId": task.creatorId,
+        "name": task.name,
+        "description": task.description,
+        "tags": task.tags,
+        "deadline": task.deadline.toString(),
+        "performers": task.performers,
+        "subtasks": task.subtasks,
+      }),
+    );
   }
 }
 
