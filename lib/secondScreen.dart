@@ -98,7 +98,8 @@ class _MyHomePageState2 extends State<MyHomePage2> {
       Widget child,
       double width,
       double height,
-      Function onPressed}) {
+      Function onPressed,
+      String chatId = ""}) {
     return Container(
       width: width,
       height: height,
@@ -110,7 +111,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
             children: [
               Container(
                 width: width - 10,
-                height: 36,
+                height: 30,
                 child: Row(
                   children: [
                     Expanded(
@@ -128,6 +129,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 ),
                 padding: EdgeInsets.only(left: 7, right: 7),
               ),
+              // Разделяющая полоса
               Container(
                 width: width - 10,
                 height: 1,
@@ -135,11 +137,17 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               ),
               Container(
                 width: width - 10,
-                height: height - 57,
+                height: height - 75,
                 child: child,
                 color: Color(0xFFc2deff),
                 padding: EdgeInsets.only(left: 10, right: 10),
               ),
+              Container(
+                alignment: Alignment.center,
+                width: width - 90,
+                height: 20,
+                child: Text(chatId),
+              )
             ],
           ),
         ),
@@ -171,6 +179,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№1. Обучение",
+                chatId: "#1Learn",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -190,6 +199,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№2. Базы данных",
+                chatId: "#2DB",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -214,6 +224,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№3. Разработка",
+                chatId: "#3Dev",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -233,6 +244,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№4. Тех.Поддержка",
+                chatId: "#4Support",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -257,6 +269,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№5. Анализ данных",
+                chatId: "#5DataS",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -276,6 +289,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№6. Контроль информации",
+                chatId: "#6ControlInf",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -300,6 +314,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№7. Документация",
+                chatId: "#7Docs",
                 onPressed: () {
                   viewThrirdScreen();
                 },
@@ -319,6 +334,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 height: 315,
                 width: 305,
                 title: "№8. Курсы повышения квалификации",
+                chatId: "#8RefCurse",
                 onPressed: () {
                   viewThrirdScreen();
                 },
