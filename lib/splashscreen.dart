@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:app/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,9 +19,17 @@ class _SplashScreenState extends State<SplashScreen> {
       loader = Column(
         children: [
           MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => LoginPage(),
+                ),
+              );
+            },
             child: Text("Вход"),
-            minWidth: 150,
+            minWidth: 500,
+            height: 50,
             color: Colors.white,
           ),
           Padding(
@@ -28,7 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
             child: MaterialButton(
               onPressed: () {},
               child: Text("Регистрация"),
-              minWidth: 150,
+              minWidth: 500,
+              height: 50,
               color: Colors.white,
             ),
           )
