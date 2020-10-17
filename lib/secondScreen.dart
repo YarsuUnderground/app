@@ -126,6 +126,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: width - 10,
                 height: height - 57,
                 child: child,
+                padding: EdgeInsets.only(left: 10, right: 10),
               ),
             ],
           ),
@@ -146,7 +147,56 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
+                    Text(
+                      'Обучение для работы с новыми программными средствами и комплексами',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "№1. Обучение",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+              _buildCard(
+                child: ListView(
+                  children: [
+                    Text(
+                      'Администрирование и обеспечение функционирования баз данных',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
+                  ],
+                ),
+                height: 315,
+                width: 305,
+                title: "№1. Example",
+                onPressed: () {
+                  // TODO:
+                },
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildCard(
+                child: ListView(
+                  children: [
+                    Text(
+                      'Разработка технической и сопроводительной документации к разрабатываемому программному обеспечению;',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
@@ -159,7 +209,13 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
+                    Text(
+                      'Техническая поддержка и функциональное сопровождение введенных в эксплуатацию программных комплексов',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
@@ -177,7 +233,13 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
+                    Text(
+                      'Анализ входящих данных',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
@@ -190,38 +252,13 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
-                  ],
-                ),
-                height: 315,
-                width: 305,
-                title: "Example",
-                onPressed: () {
-                  // TODO:
-                },
-              ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildCard(
-                child: ListView(
-                  children: [
-                    // TODO
-                  ],
-                ),
-                height: 315,
-                width: 305,
-                title: "Example",
-                onPressed: () {
-                  // TODO:
-                },
-              ),
-              _buildCard(
-                child: ListView(
-                  children: [
-                    // TODO
+                    Text(
+                      'Отслеживание достоверности поступающей информации',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
@@ -239,7 +276,13 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
+                    Text(
+                      'Изучение дополнительной документации и соглашений о конфиденциальности данных',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
@@ -252,7 +295,13 @@ class _MyHomePageState2 extends State<MyHomePage2> {
               _buildCard(
                 child: ListView(
                   children: [
-                    // TODO
+                    Text(
+                      'Прохождение курсов повышения квалификации',
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.clip,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
                 height: 315,
