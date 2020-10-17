@@ -51,7 +51,10 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       ),
                     ),
                     MaterialButton(
-                      child: Text("Все"),
+                      child: Text(
+                        "ОТКРЫТЬ",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       onPressed: onPressed,
                     ),
                   ],
@@ -68,7 +71,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                 width: width - 10,
                 height: height - 75,
                 child: child,
-                color: Color(0xFFc2deff),
+                color: Color(0xFFBBC1FF),
                 padding: EdgeInsets.only(left: 10, right: 10),
               ),
               Container(
@@ -90,6 +93,16 @@ class _MyHomePageState2 extends State<MyHomePage2> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          RotatedBox(
+            quarterTurns: -1,
+            child: Text(
+              "ВАШИ ЗАДАЧИ",
+              style: TextStyle(
+                fontSize: 30,
+                color: Color(0x6C000000),
+              ),
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -101,7 +114,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -121,7 +134,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -146,7 +159,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -166,7 +179,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -191,7 +204,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -211,7 +224,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -236,7 +249,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
@@ -256,7 +269,7 @@ class _MyHomePageState2 extends State<MyHomePage2> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.clip,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     )
                   ],
                 ),
