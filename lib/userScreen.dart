@@ -251,73 +251,69 @@ class _UserScreenState extends State<UserScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         _buildCard(
-                          color: Color(0xFFBBC1FF),
-                          child: ListView(
-                            children: [
-                              ...ListTile.divideTiles(
-                                context: context,
-                                tiles: [
-                                  ListTile(
-                                    leading: Icon(
-                                      Icons.warning,
-                                      color: Colors.blue,
-                                      size: 36,
+                            color: Color(0xFFBBC1FF),
+                            child: ListView(
+                              children: [
+                                ...ListTile.divideTiles(
+                                  context: context,
+                                  tiles: [
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.warning,
+                                        color: Colors.blue,
+                                        size: 36,
+                                      ),
+                                      title: Text(
+                                          "ВНИМАНИЕ. Задание 'Ремонт трассы М9' было просрочено вчера "),
+                                      subtitle: Text("11 Дек → 20 Дек"),
                                     ),
-                                    title: Text(
-                                        "ВНИМАНИЕ. Задание 'Ремонт трассы М9' было просрочено вчера "),
-                                    subtitle: Text("11 Дек → 20 Дек"),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(
-                                      Icons.info_outline,
-                                      color: Colors.blue,
-                                      size: 36,
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.info_outline,
+                                        color: Colors.blue,
+                                        size: 36,
+                                      ),
+                                      title: Text(
+                                          "Изменение срока 'Больница №10'"),
+                                      subtitle: Text("20 Дек → 22 Дек"),
                                     ),
-                                    title:
-                                        Text("Изменение срока 'Больница №10'"),
-                                    subtitle: Text("20 Дек → 22 Дек"),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(
-                                      Icons.info_outline,
-                                      color: Colors.blue,
-                                      size: 36,
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.info_outline,
+                                        color: Colors.blue,
+                                        size: 36,
+                                      ),
+                                      title: Text(
+                                          "ВНИМАНИЕ. Близится срок сдачи задания 'Больница №10'"),
+                                      subtitle: Text("11 Дек → 20 Дек"),
                                     ),
-                                    title: Text(
-                                        "ВНИМАНИЕ. Близится срок сдачи задания 'Больница №10'"),
-                                    subtitle: Text("11 Дек → 20 Дек"),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(
-                                      Icons.info_outline,
-                                      color: Colors.blue,
-                                      size: 36,
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.info_outline,
+                                        color: Colors.blue,
+                                        size: 36,
+                                      ),
+                                      title: Text(
+                                          "Добавлен исполнитель: Долгоруков Вальтер"),
+                                      subtitle: Text("Задача: Ремонт больницы"),
                                     ),
-                                    title: Text(
-                                        "Добавлен исполнитель: Долгоруков Вальтер"),
-                                    subtitle: Text("Задача: Ремонт больницы"),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(
-                                      Icons.info_outline,
-                                      color: Colors.blue,
-                                      size: 36,
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.info_outline,
+                                        color: Colors.blue,
+                                        size: 36,
+                                      ),
+                                      title: Text(
+                                          "Собрание команды задачи 'Приют' "),
+                                      subtitle: Text("Дата: 21.11, 19:00"),
                                     ),
-                                    title: Text(
-                                        "Собрание команды задачи 'Приют' "),
-                                    subtitle: Text("Дата: 21.11, 19:00"),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 600,
-                          width: 500,
-                          title: "Новости",
-                          onPressed: () {
-                            // TODO:
-                          },
-                        ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            height: 600,
+                            width: 500,
+                            title: "Новости"),
                       ],
                     ),
                   ],
