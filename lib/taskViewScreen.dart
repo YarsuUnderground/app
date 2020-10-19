@@ -165,7 +165,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                           color: Colors.red[200],
                           height: 500,
                           width: 322,
-                          title: "Placeholder",
+                          title: "Не выполнено",
                         ),
                         _buildCard(
                           child: ListView.builder(
@@ -198,7 +198,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                           color: Colors.amber[200],
                           height: 500,
                           width: 322,
-                          title: "Placeholder",
+                          title: "Выполняется",
                         ),
                         _buildCard(
                           child: ListView.builder(
@@ -226,7 +226,7 @@ class _TaskViewScreenState extends State<TaskViewScreen> {
                           color: Colors.green[200],
                           height: 500,
                           width: 322,
-                          title: "Placeholder",
+                          title: "Выполнено",
                         ),
                       ],
                     ),
